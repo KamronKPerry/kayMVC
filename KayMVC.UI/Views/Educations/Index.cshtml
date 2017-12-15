@@ -1,0 +1,75 @@
+﻿@model IEnumerable<KayMVC.DATA.Education>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Minor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MajorEmphasis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinorEmphasis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Institution.InstitutionName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DegreeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Minor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MajorEmphasis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinorEmphasis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Institution.InstitutionName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EducationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EducationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EducationID })
+        </td>
+    </tr>
+}
+
+</table>

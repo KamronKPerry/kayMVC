@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df3515b1bcbb4d6e9bf74f6cd14c1053" Name="Diagram1">
+        <EntityTypeShape EntityType="kaylahSiteModel.About" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Achievement" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="kaylahSiteModel.BaseInfo" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Company" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Education" Width="1.5" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="kaylahSiteModel.GraphicsSample" Width="1.5" PointX="2.75" PointY="4.875" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Institution" Width="1.5" PointX="5.75" PointY="1.5" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Picture" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Responsibility" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="kaylahSiteModel.ResumeJobEntry" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="kaylahSiteModel.Skill" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="kaylahSiteModel.WritingSample" Width="1.5" PointX="5" PointY="4.875" />
+        <AssociationConnector Association="kaylahSiteModel.FK_ResumeJobEntry_Company" />
+        <AssociationConnector Association="kaylahSiteModel.FK_Education_Institution" />
+        <AssociationConnector Association="kaylahSiteModel.FK_WritingSamples_GraphicsSamples" />
+        <AssociationConnector Association="kaylahSiteModel.FK_ResumeJobEntry_Responsibility" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kaylahSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Info" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Achievements">
+          <Key>
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="AchievementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hightlight" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BaseInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="14" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isCurrent" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstitutionID" Type="int" Nullable="false" />
+          <Property Name="DegreeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GPA" Type="int" />
+          <Property Name="Completion" Type="date" />
+          <Property Name="Major" Type="nvarchar" MaxLength="50" />
+          <Property Name="Minor" Type="nvarchar" MaxLength="50" />
+          <Property Name="MajorEmphasis" Type="nvarchar" MaxLength="100" />
+          <Property Name="MinorEmphasis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GraphicsSamples">
+          <Key>
+            <PropertyRef Name="GraphicID" />
+          </Key>
+          <Property Name="GraphicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Information" Type="nvarchar(max)" />
+          <Property Name="GraphicTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Institution">
+          <Key>
+            <PropertyRef Name="InsitutionID" />
+          </Key>
+          <Property Name="InsitutionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstitutionName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="InstitutionCity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="InstitutionState" Type="nvarchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="PictureID" />
+          </Key>
+          <Property Name="PictureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="isCurrent" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsibility">
+          <Key>
+            <PropertyRef Name="ResponsibilityID" />
+          </Key>
+          <Property Name="ResponsibilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntryID" Type="int" Nullable="false" />
+          <Property Name="Responsibility" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResumeJobEntry">
+          <Key>
+            <PropertyRef Name="EntryID" />
+          </Key>
+          <Property Name="EntryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="DateBegin" Type="date" Nullable="false" />
+          <Property Name="DateEnd" Type="date" />
+          <Property Name="isRelevant" Type="bit" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Highlight" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WritingSamples">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SampleTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SampleContext" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SampleAdditionalContext" Type="nvarchar(max)" />
+          <Property Name="GraphicPairing" Type="int" />
+        </EntityType>
+        <Association Name="FK_Education_Institution">
+          <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institution">
+              <PropertyRef Name="InsitutionID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="InstitutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeJobEntry_Company">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="ResumeJobEntry" Type="Self.ResumeJobEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="ResumeJobEntry">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeJobEntry_Responsibility">
+          <End Role="Responsibility" Type="Self.Responsibility" Multiplicity="1" />
+          <End Role="ResumeJobEntry" Type="Self.ResumeJobEntry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Responsibility">
+              <PropertyRef Name="ResponsibilityID" />
+            </Principal>
+            <Dependent Role="ResumeJobEntry">
+              <PropertyRef Name="EntryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WritingSamples_GraphicsSamples">
+          <End Role="GraphicsSamples" Type="Self.GraphicsSamples" Multiplicity="0..1" />
+          <End Role="WritingSamples" Type="Self.WritingSamples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GraphicsSamples">
+              <PropertyRef Name="GraphicID" />
+            </Principal>
+            <Dependent Role="WritingSamples">
+              <PropertyRef Name="GraphicPairing" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="kaylahSiteModelStoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Achievements" EntityType="Self.Achievements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaseInfo" EntityType="Self.BaseInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GraphicsSamples" EntityType="Self.GraphicsSamples" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Institution" EntityType="Self.Institution" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Responsibility" EntityType="Self.Responsibility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResumeJobEntry" EntityType="Self.ResumeJobEntry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WritingSamples" EntityType="Self.WritingSamples" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Education_Institution" Association="Self.FK_Education_Institution">
+            <End Role="Institution" EntitySet="Institution" />
+            <End Role="Education" EntitySet="Education" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeJobEntry_Company" Association="Self.FK_ResumeJobEntry_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="ResumeJobEntry" EntitySet="ResumeJobEntry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeJobEntry_Responsibility" Association="Self.FK_ResumeJobEntry_Responsibility">
+            <End Role="Responsibility" EntitySet="Responsibility" />
+            <End Role="ResumeJobEntry" EntitySet="ResumeJobEntry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WritingSamples_GraphicsSamples" Association="Self.FK_WritingSamples_GraphicsSamples">
+            <End Role="GraphicsSamples" EntitySet="GraphicsSamples" />
+            <End Role="WritingSamples" EntitySet="WritingSamples" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kaylahSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="kaylahSiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="kaylahSiteModel.About" />
+          <EntitySet Name="Achievements" EntityType="kaylahSiteModel.Achievement" />
+          <EntitySet Name="BaseInfoes" EntityType="kaylahSiteModel.BaseInfo" />
+          <EntitySet Name="Companies" EntityType="kaylahSiteModel.Company" />
+          <EntitySet Name="Educations" EntityType="kaylahSiteModel.Education" />
+          <EntitySet Name="GraphicsSamples" EntityType="kaylahSiteModel.GraphicsSample" />
+          <EntitySet Name="Institutions" EntityType="kaylahSiteModel.Institution" />
+          <EntitySet Name="Pictures" EntityType="kaylahSiteModel.Picture" />
+          <EntitySet Name="Responsibilities" EntityType="kaylahSiteModel.Responsibility" />
+          <EntitySet Name="ResumeJobEntries" EntityType="kaylahSiteModel.ResumeJobEntry" />
+          <EntitySet Name="Skills" EntityType="kaylahSiteModel.Skill" />
+          <EntitySet Name="WritingSamples" EntityType="kaylahSiteModel.WritingSample" />
+          <AssociationSet Name="FK_ResumeJobEntry_Company" Association="kaylahSiteModel.FK_ResumeJobEntry_Company">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="ResumeJobEntry" EntitySet="ResumeJobEntries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Education_Institution" Association="kaylahSiteModel.FK_Education_Institution">
+            <End Role="Institution" EntitySet="Institutions" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WritingSamples_GraphicsSamples" Association="kaylahSiteModel.FK_WritingSamples_GraphicsSamples">
+            <End Role="GraphicsSample" EntitySet="GraphicsSamples" />
+            <End Role="WritingSample" EntitySet="WritingSamples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResumeJobEntry_Responsibility" Association="kaylahSiteModel.FK_ResumeJobEntry_Responsibility">
+            <End Role="Responsibility" EntitySet="Responsibilities" />
+            <End Role="ResumeJobEntry" EntitySet="ResumeJobEntries" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Info" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Achievement">
+          <Key>
+            <PropertyRef Name="AchievementID" />
+          </Key>
+          <Property Name="AchievementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hightlight" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BaseInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isCurrent" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ResumeJobEntries" Relationship="kaylahSiteModel.FK_ResumeJobEntry_Company" FromRole="Company" ToRole="ResumeJobEntry" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InstitutionID" Type="Int32" Nullable="false" />
+          <Property Name="DegreeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GPA" Type="Int32" />
+          <Property Name="Completion" Type="DateTime" Precision="0" />
+          <Property Name="Major" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Minor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MajorEmphasis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MinorEmphasis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Institution" Relationship="kaylahSiteModel.FK_Education_Institution" FromRole="Education" ToRole="Institution" />
+        </EntityType>
+        <EntityType Name="GraphicsSample">
+          <Key>
+            <PropertyRef Name="GraphicID" />
+          </Key>
+          <Property Name="GraphicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GraphicTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="WritingSamples" Relationship="kaylahSiteModel.FK_WritingSamples_GraphicsSamples" FromRole="GraphicsSample" ToRole="WritingSample" />
+        </EntityType>
+        <EntityType Name="Institution">
+          <Key>
+            <PropertyRef Name="InsitutionID" />
+          </Key>
+          <Property Name="InsitutionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InstitutionName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InstitutionCity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InstitutionState" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Educations" Relationship="kaylahSiteModel.FK_Education_Institution" FromRole="Institution" ToRole="Education" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="PictureID" />
+          </Key>
+          <Property Name="PictureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="isCurrent" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsibility">
+          <Key>
+            <PropertyRef Name="ResponsibilityID" />
+          </Key>
+          <Property Name="ResponsibilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntryID" Type="Int32" Nullable="false" />
+          <Property Name="Responsibility1" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ResumeJobEntry" Relationship="kaylahSiteModel.FK_ResumeJobEntry_Responsibility" FromRole="Responsibility" ToRole="ResumeJobEntry" />
+        </EntityType>
+        <EntityType Name="ResumeJobEntry">
+          <Key>
+            <PropertyRef Name="EntryID" />
+          </Key>
+          <Property Name="EntryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="DateBegin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <Property Name="isRelevant" Type="Boolean" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Company" Relationship="kaylahSiteModel.FK_ResumeJobEntry_Company" FromRole="ResumeJobEntry" ToRole="Company" />
+          <NavigationProperty Name="Responsibility" Relationship="kaylahSiteModel.FK_ResumeJobEntry_Responsibility" FromRole="ResumeJobEntry" ToRole="Responsibility" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="SkillID" />
+          </Key>
+          <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Highlight" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WritingSample">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SampleTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SampleContext" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SampleAdditionalContext" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GraphicPairing" Type="Int32" />
+          <NavigationProperty Name="GraphicsSample" Relationship="kaylahSiteModel.FK_WritingSamples_GraphicsSamples" FromRole="WritingSample" ToRole="GraphicsSample" />
+        </EntityType>
+        <Association Name="FK_ResumeJobEntry_Company">
+          <End Type="kaylahSiteModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="kaylahSiteModel.ResumeJobEntry" Role="ResumeJobEntry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="ResumeJobEntry">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Education_Institution">
+          <End Type="kaylahSiteModel.Institution" Role="Institution" Multiplicity="1" />
+          <End Type="kaylahSiteModel.Education" Role="Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institution">
+              <PropertyRef Name="InsitutionID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="InstitutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WritingSamples_GraphicsSamples">
+          <End Type="kaylahSiteModel.GraphicsSample" Role="GraphicsSample" Multiplicity="0..1" />
+          <End Type="kaylahSiteModel.WritingSample" Role="WritingSample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GraphicsSample">
+              <PropertyRef Name="GraphicID" />
+            </Principal>
+            <Dependent Role="WritingSample">
+              <PropertyRef Name="GraphicPairing" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResumeJobEntry_Responsibility">
+          <End Type="kaylahSiteModel.Responsibility" Role="Responsibility" Multiplicity="1" />
+          <End Type="kaylahSiteModel.ResumeJobEntry" Role="ResumeJobEntry" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Responsibility">
+              <PropertyRef Name="ResponsibilityID" />
+            </Principal>
+            <Dependent Role="ResumeJobEntry">
+              <PropertyRef Name="EntryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kaylahSiteModelStoreContainer" CdmEntityContainer="kaylahSiteEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="kaylahSiteModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Achievements">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Achievement">
+              <MappingFragment StoreEntitySet="Achievements">
+                <ScalarProperty Name="Hightlight" ColumnName="Hightlight" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AchievementID" ColumnName="AchievementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaseInfoes">
+            <EntityTypeMapping TypeName="kaylahSiteModel.BaseInfo">
+              <MappingFragment StoreEntitySet="BaseInfo">
+                <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InfoID" ColumnName="InfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="MinorEmphasis" ColumnName="MinorEmphasis" />
+                <ScalarProperty Name="MajorEmphasis" ColumnName="MajorEmphasis" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Completion" ColumnName="Completion" />
+                <ScalarProperty Name="GPA" ColumnName="GPA" />
+                <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+                <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+                <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GraphicsSamples">
+            <EntityTypeMapping TypeName="kaylahSiteModel.GraphicsSample">
+              <MappingFragment StoreEntitySet="GraphicsSamples">
+                <ScalarProperty Name="GraphicTitle" ColumnName="GraphicTitle" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="GraphicID" ColumnName="GraphicID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Institutions">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Institution">
+              <MappingFragment StoreEntitySet="Institution">
+                <ScalarProperty Name="InstitutionState" ColumnName="InstitutionState" />
+                <ScalarProperty Name="InstitutionCity" ColumnName="InstitutionCity" />
+                <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+                <ScalarProperty Name="InsitutionID" ColumnName="InsitutionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Responsibilities">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Responsibility">
+              <MappingFragment StoreEntitySet="Responsibility">
+                <ScalarProperty Name="Responsibility1" ColumnName="Responsibility" />
+                <ScalarProperty Name="EntryID" ColumnName="EntryID" />
+                <ScalarProperty Name="ResponsibilityID" ColumnName="ResponsibilityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResumeJobEntries">
+            <EntityTypeMapping TypeName="kaylahSiteModel.ResumeJobEntry">
+              <MappingFragment StoreEntitySet="ResumeJobEntry">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="isRelevant" ColumnName="isRelevant" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="EntryID" ColumnName="EntryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="kaylahSiteModel.Skill">
+              <MappingFragment StoreEntitySet="Skills">
+                <ScalarProperty Name="Highlight" ColumnName="Highlight" />
+                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WritingSamples">
+            <EntityTypeMapping TypeName="kaylahSiteModel.WritingSample">
+              <MappingFragment StoreEntitySet="WritingSamples">
+                <ScalarProperty Name="GraphicPairing" ColumnName="GraphicPairing" />
+                <ScalarProperty Name="SampleAdditionalContext" ColumnName="SampleAdditionalContext" />
+                <ScalarProperty Name="SampleContext" ColumnName="SampleContext" />
+                <ScalarProperty Name="SampleTitle" ColumnName="SampleTitle" />
+                <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
