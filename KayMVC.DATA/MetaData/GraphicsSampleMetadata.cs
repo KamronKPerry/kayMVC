@@ -10,6 +10,7 @@ namespace KayData
     class GraphicsSampleMetadata
     {
         [Display(Name ="Image Name")]
+        [DataType(DataType.Upload)]
         public string ImageName { get; set; }
         [Display(Name ="Active?")]
         public bool IsActive { get; set; }

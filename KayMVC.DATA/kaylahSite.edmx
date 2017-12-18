@@ -52,7 +52,7 @@
           <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InstitutionID" Type="int" Nullable="false" />
           <Property Name="DegreeName" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="GPA" Type="int" />
+          <Property Name="GPA" Type="decimal" Precision="3" Scale="2" />
           <Property Name="Completion" Type="date" />
           <Property Name="Major" Type="nvarchar" MaxLength="50" />
           <Property Name="Minor" Type="nvarchar" MaxLength="50" />

@@ -5,7 +5,7 @@
     @using KayMVC.DATA
     @using KayMVC.DOMAIN
     @using System.Linq
-    @{ 
+    @{
         UOW UnitOfWork = new UOW();
         var Picture = UnitOfWork.PictureRepository.Get();
         var Pic = Picture.Where(x => x.isCurrent == true).Select(x => x.ImageName);
@@ -24,29 +24,33 @@
 </head>
 <body>
     <div class="headerCustom" id="headerCustom">
-    <div class="headerPicture" id="headerPicture"><img src="@PicLocation"/></div>
-    <div class="headerName" id="headerName"></div>
-    <div class="headerNavbar" id="headerNavbar">
-        <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-        {
-            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                        <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                        <li>@Html.ActionLink("AboutInfo", "Index", "Abouts")</li>
-                        <li>@Html.ActionLink("AchievementsInfo", "Index", "Achievements")</li>
-                        <li>@Html.ActionLink("BaseInfo", "Index", "BaseInfoes")</li>
-                        <li>@Html.ActionLink("CompaniesInfo", "Index", "Companies")</li>
-                        <li>@Html.ActionLink("EducationInfo", "Index", "Educations")</li>
-                        <li>@Html.ActionLink("Schools", "Index", "Institutions")</li>
-                        <li>@Html.ActionLink("Picture", "Index", "Pictures")</li>
-                        <li>@Html.ActionLink("Jobs", "Index", "ResumeJobEntries")</li>
-                        <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
-        }
-    </ul>
-    @Html.Partial("_LoginPartial")
-</div></div>
+        <div class="headerPicture" id="headerPicture"><img src="@PicLocation" /></div>
+        <div class="headerName" id="headerName"></div>
+        <div class="headerNavbar" id="headerNavbar">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    { }
+                    <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                    <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                    <li>@Html.ActionLink("AboutInfo", "Index", "Abouts")</li>
+                    <li>@Html.ActionLink("AchievementsInfo", "Index", "Achievements")</li>
+                    <li>@Html.ActionLink("BaseInfo", "Index", "BaseInfoes")</li>
+                    <li>@Html.ActionLink("CompaniesInfo", "Index", "Companies")</li>
+                    <li>@Html.ActionLink("EducationInfo", "Index", "Educations")</li>
+                    <li>@Html.ActionLink("Schools", "Index", "Institutions")</li>
+                    <li>@Html.ActionLink("Picture", "Index", "Pictures")</li>
+                    <li>@Html.ActionLink("Jobs", "Index", "ResumeJobEntries")</li>
+                    <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
+                    <li>@Html.ActionLink("Writing Samples", "Index", "WritingSamples")</li>
+                    <li>@Html.ActionLink("Job Responsibilities", "Index", "Responsibilities")</li>
+                    <li>@Html.ActionLink("Graphic Samples", "Index", "GraphicsSamples")</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
     </div>
 
     <div class="clearfix"></div>
