@@ -1,4 +1,4 @@
-﻿@model KayMVC.DATA.Picture
+﻿@model KayMVC.DATA.ResumeUpload
 
 @{
     ViewBag.Title = "Details";
@@ -7,15 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Picture</h4>
+    <h4>ResumeUpload</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ImageName)
+            @Html.DisplayNameFor(model => model.ResumeName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageName)
+            @Html.DisplayFor(model => model.ResumeName)
         </dd>
 
         <dt>
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PictureID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ResumeID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

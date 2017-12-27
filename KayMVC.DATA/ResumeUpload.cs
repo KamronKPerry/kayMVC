@@ -12,16 +12,11 @@ namespace KayMVC.DATA
     using System;
     using System.Collections.Generic;
     
-    public partial class ResumeJobEntry
+    public partial class ResumeUpload
     {
-        public int EntryID { get; set; }
-        public int CompanyID { get; set; }
-        public System.DateTime DateBegin { get; set; }
-        public Nullable<System.DateTime> DateEnd { get; set; }
-        public bool isRelevant { get; set; }
-        public string Title { get; set; }
-    
-        public virtual Company Company { get; set; }
-        public virtual Responsibility Responsibility { get; set; }
+        public int ResumeID { get; set; }
+        public string ResumeName { get; set; }
+        public bool isCurrent { get; set; }
+        public System.DateTime UploadDate { get; set; }
     }
 }

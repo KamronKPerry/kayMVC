@@ -8,8 +8,9 @@ using KayMVC.DATA;
 
 namespace KayMVC.DOMAIN.Repositories
 {
-    public class ResponsibilityRepository : GenericRepository<Responsibility>
+    public class ResumeUploadRepository : GenericRepository<ResumeUpload>
     {
-        public ResponsibilityRepository(DbContext db) : base(db) { }
+        public ResumeUploadRepository(DbContext db) : base(db) { }
+
     }
 }

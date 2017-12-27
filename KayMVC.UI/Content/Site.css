@@ -1,4 +1,11 @@
-﻿html {
+﻿:root{
+    --burgandy: #6400013;
+    --grey: #80848C;
+    --orange: #DD2C02;
+    --white: #FFD6DE;
+    --black: #453837;
+}
+html {
     position: relative;
     width: 100%;
 }

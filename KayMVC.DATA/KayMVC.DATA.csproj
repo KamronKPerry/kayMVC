@@ -54,22 +54,7 @@
     <Compile Include="About.cs">
       <DependentUpon>kaylahSite.tt</DependentUpon>
     </Compile>
-    <Compile Include="Achievement.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseInfo.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Company.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Education.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
     <Compile Include="GraphicsSample.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Institution.cs">
       <DependentUpon>kaylahSite.tt</DependentUpon>
     </Compile>
     <Compile Include="kaylahSite.Context.cs">
@@ -88,28 +73,15 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="MetaData\AboutMetadata.cs" />
-    <Compile Include="MetaData\AchievementMetadata.cs" />
-    <Compile Include="MetaData\BaseInfoMetadata.cs" />
-    <Compile Include="MetaData\CompanyMetadata.cs" />
-    <Compile Include="MetaData\EducationMetadata.cs" />
     <Compile Include="MetaData\GraphicsSampleMetadata.cs" />
-    <Compile Include="MetaData\InstitutionMetadata.cs" />
     <Compile Include="MetaData\PictureMetadata.cs" />
-    <Compile Include="MetaData\ResponsibilityMetadata.cs" />
-    <Compile Include="MetaData\ResumeJobEntryMetadata.cs" />
-    <Compile Include="MetaData\SkillMetadata.cs" />
+    <Compile Include="MetaData\ResumeUploadMetadata.cs" />
     <Compile Include="MetaData\WritingSamplesMetadata.cs" />
     <Compile Include="Picture.cs">
       <DependentUpon>kaylahSite.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Responsibility.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ResumeJobEntry.cs">
-      <DependentUpon>kaylahSite.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Skill.cs">
+    <Compile Include="ResumeUpload.cs">
       <DependentUpon>kaylahSite.tt</DependentUpon>
     </Compile>
     <Compile Include="WritingSample.cs">

@@ -10,107 +10,107 @@ using KayMVC.DATA;
 
 namespace KayMVC.UI.Controllers
 {
-    public class BaseInfoesController : Controller
+    public class ResumeUploadsController : Controller
     {
         private kaylahSiteEntities db = new kaylahSiteEntities();
 
-        // GET: BaseInfoes
+        // GET: ResumeUploads
         public ActionResult Index()
         {
-            return View(db.BaseInfoes.ToList());
+            return View(db.ResumeUploads.ToList());
         }
 
-        // GET: BaseInfoes/Details/5
+        // GET: ResumeUploads/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseInfo baseInfo = db.BaseInfoes.Find(id);
-            if (baseInfo == null)
+            ResumeUpload resumeUpload = db.ResumeUploads.Find(id);
+            if (resumeUpload == null)
             {
                 return HttpNotFound();
             }
-            return View(baseInfo);
+            return View(resumeUpload);
         }
 
-        // GET: BaseInfoes/Create
+        // GET: ResumeUploads/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BaseInfoes/Create
+        // POST: ResumeUploads/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InfoID,Name,Address,City,State,Phone,Email,isCurrent")] BaseInfo baseInfo)
+        public ActionResult Create([Bind(Include = "ResumeID,ResumeName,isCurrent,UploadDate")] ResumeUpload resumeUpload)
         {
             if (ModelState.IsValid)
             {
-                db.BaseInfoes.Add(baseInfo);
+                db.ResumeUploads.Add(resumeUpload);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(baseInfo);
+            return View(resumeUpload);
         }
 
-        // GET: BaseInfoes/Edit/5
+        // GET: ResumeUploads/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseInfo baseInfo = db.BaseInfoes.Find(id);
-            if (baseInfo == null)
+            ResumeUpload resumeUpload = db.ResumeUploads.Find(id);
+            if (resumeUpload == null)
             {
                 return HttpNotFound();
             }
-            return View(baseInfo);
+            return View(resumeUpload);
         }
 
-        // POST: BaseInfoes/Edit/5
+        // POST: ResumeUploads/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InfoID,Name,Address,City,State,Phone,Email,isCurrent")] BaseInfo baseInfo)
+        public ActionResult Edit([Bind(Include = "ResumeID,ResumeName,isCurrent,UploadDate")] ResumeUpload resumeUpload)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(baseInfo).State = EntityState.Modified;
+                db.Entry(resumeUpload).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(baseInfo);
+            return View(resumeUpload);
         }
 
-        // GET: BaseInfoes/Delete/5
+        // GET: ResumeUploads/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaseInfo baseInfo = db.BaseInfoes.Find(id);
-            if (baseInfo == null)
+            ResumeUpload resumeUpload = db.ResumeUploads.Find(id);
+            if (resumeUpload == null)
             {
                 return HttpNotFound();
             }
-            return View(baseInfo);
+            return View(resumeUpload);
         }
 
-        // POST: BaseInfoes/Delete/5
+        // POST: ResumeUploads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BaseInfo baseInfo = db.BaseInfoes.Find(id);
-            db.BaseInfoes.Remove(baseInfo);
+            ResumeUpload resumeUpload = db.ResumeUploads.Find(id);
+            db.ResumeUploads.Remove(resumeUpload);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KayMVC.DATA.Picture>
+﻿@model IEnumerable<KayMVC.DATA.ResumeUpload>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ImageName)
+            @Html.DisplayNameFor(model => model.ResumeName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.isCurrent)
@@ -26,7 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageName)
+            @Html.DisplayFor(modelItem => item.ResumeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.isCurrent)
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.UploadDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PictureID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PictureID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PictureID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResumeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ResumeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResumeID })
         </td>
     </tr>
 }

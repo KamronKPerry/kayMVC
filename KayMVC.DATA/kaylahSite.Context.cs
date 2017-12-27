@@ -26,16 +26,9 @@ namespace KayMVC.DATA
         }
     
         public virtual DbSet<About> Abouts { get; set; }
-        public virtual DbSet<Achievement> Achievements { get; set; }
-        public virtual DbSet<BaseInfo> BaseInfoes { get; set; }
-        public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<GraphicsSample> GraphicsSamples { get; set; }
-        public virtual DbSet<Institution> Institutions { get; set; }
         public virtual DbSet<Picture> Pictures { get; set; }
-        public virtual DbSet<Responsibility> Responsibilities { get; set; }
-        public virtual DbSet<ResumeJobEntry> ResumeJobEntries { get; set; }
-        public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<WritingSample> WritingSamples { get; set; }
+        public virtual DbSet<ResumeUpload> ResumeUploads { get; set; }
     }
 }

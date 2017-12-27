@@ -46,7 +46,7 @@ namespace KayMVC.UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PictureID,ImageName,isCurrent")] Picture picture)
+        public ActionResult Create([Bind(Include = "PictureID,ImageName,isCurrent,UploadDate")] Picture picture)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace KayMVC.UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PictureID,ImageName,isCurrent")] Picture picture)
+        public ActionResult Edit([Bind(Include = "PictureID,ImageName,isCurrent,UploadDate")] Picture picture)
         {
             if (ModelState.IsValid)
             {

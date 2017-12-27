@@ -30,23 +30,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))//removed security for building and testing.
                     { }
                     <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                     <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
                     <li>@Html.ActionLink("AboutInfo", "Index", "Abouts")</li>
-                    <li>@Html.ActionLink("AchievementsInfo", "Index", "Achievements")</li>
-                    <li>@Html.ActionLink("BaseInfo", "Index", "BaseInfoes")</li>
-                    <li>@Html.ActionLink("CompaniesInfo", "Index", "Companies")</li>
-                    <li>@Html.ActionLink("EducationInfo", "Index", "Educations")</li>
-                    <li>@Html.ActionLink("Schools", "Index", "Institutions")</li>
                     <li>@Html.ActionLink("Picture", "Index", "Pictures")</li>
-                    <li>@Html.ActionLink("Jobs", "Index", "ResumeJobEntries")</li>
-                    <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
                     <li>@Html.ActionLink("Writing Samples", "Index", "WritingSamples")</li>
-                    <li>@Html.ActionLink("Job Responsibilities", "Index", "Responsibilities")</li>
+                    <li>@Html.ActionLink("Resume Uploads","Index","ResumeUploads")</li>
                     <li>@Html.ActionLink("Graphic Samples", "Index", "GraphicsSamples")</li>
-
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

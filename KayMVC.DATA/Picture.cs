@@ -17,5 +17,6 @@ namespace KayMVC.DATA
         public int PictureID { get; set; }
         public string ImageName { get; set; }
         public bool isCurrent { get; set; }
+        public System.DateTime UploadDate { get; set; }
     }
 }
