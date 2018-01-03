@@ -1,4 +1,9 @@
-﻿@{
+﻿@model IEnumerable<KayMVC.DATA.About>
+@{
     ViewBag.Title = "Home Page";
 }
 
+    @foreach (var item in Model)
+    {
+        <p>@Html.DisplayFor(modelItem => item.Info)</p>
+    }

@@ -24,21 +24,21 @@
 </head>
 <body>
     <div class="headerCustom" id="headerCustom">
-        <div class="headerPicture" id="headerPicture"><img src="@PicLocation" /></div>
+        <div class="headerPicture" id="headerPicture"></div>
         <div class="headerName" id="headerName"></div>
         <div class="headerNavbar" id="headerNavbar">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="btn btn-header">@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))//removed security for building and testing.
                     { }
-                    <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                    <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                    <li>@Html.ActionLink("AboutInfo", "Index", "Abouts")</li>
-                    <li>@Html.ActionLink("Picture", "Index", "Pictures")</li>
-                    <li>@Html.ActionLink("Writing Samples", "Index", "WritingSamples")</li>
-                    <li>@Html.ActionLink("Resume Uploads","Index","ResumeUploads")</li>
-                    <li>@Html.ActionLink("Graphic Samples", "Index", "GraphicsSamples")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("AboutInfo", "Index", "Abouts")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("Picture", "Index", "Pictures")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("Writing Samples", "Index", "WritingSamples")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("Resume Uploads","Index","ResumeUploads")</li>
+                    <li  class="btn btn-header">@Html.ActionLink("Graphic Samples", "Index", "GraphicsSamples")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

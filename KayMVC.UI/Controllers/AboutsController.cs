@@ -7,13 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using KayMVC.DATA;
+using KayMVC.DOMAIN;
 
 namespace KayMVC.UI.Controllers
 {
     public class AboutsController : Controller
     {
         private kaylahSiteEntities db = new kaylahSiteEntities();
-
+        private UOW UnitOfWork = new UOW();
         // GET: Abouts
         public ActionResult Index()
         {

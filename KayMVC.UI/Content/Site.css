@@ -70,11 +70,28 @@ input[type="checkbox"].input-validation-error {
     align-items: flex-start;
     align-content: space-between;
 }
-
 .headerPicture {
-    min-height: 100px;
-    min-width: 100px;
-    border: 5px inset rgb(98, 3, 3);
+    display: flex;
+    background: url('Images/KayPic.jpg'), no-repeat;
+    background-size: cover;
+    height:25%;
+    width:25%;
+    position:relative;
+    border-radius: 1em;
+    border: 10px solid var(--burgandy);
+
+}
+
+.headerPicture:before{
+    content: " ";
+    position:absolute;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 1em;
+    border: 5px solid var(--black);
 }
 
 
@@ -91,4 +108,9 @@ input[type="checkbox"].input-validation-error {
     min-height: 30px;
     min-width: 300px;
     display: flex;
+}
+.btn-header{
+    margin: 1em;
+    background-color: var(--white);
+    color: var(--white);
 }
