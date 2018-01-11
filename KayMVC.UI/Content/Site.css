@@ -1,10 +1,12 @@
-﻿:root{
+﻿:root {
     --burgandy: #6400013;
     --grey: #80848C;
     --orange: #DD2C02;
     --white: #FFD6DE;
     --black: #453837;
+/*These colors need some work*/
 }
+
 html {
     position: relative;
     width: 100%;
@@ -12,9 +14,13 @@ html {
 
 body {
     position: relative;
-    width: 100%;
+    width: 90%;
     margin: 1em;
     padding: 1em;
+    display: flex;
+align-content:flex-start;
+align-items:flex-start;
+justify-content:center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -59,41 +65,46 @@ input[type="checkbox"].input-validation-error {
 }
 
 .headerCustom {
-    width: 100%;
+    width: 85%;
     height: 10%;
     min-height: 100px;
     position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     align-content: space-between;
+    flex-wrap:nowrap;
 }
+
 .headerPicture {
     display: flex;
     background: url('Images/KayPic.jpg'), no-repeat;
     background-size: cover;
-    height:25%;
-    width:25%;
-    position:relative;
+    min-height: 25%;
+    min-width: 25%;
+    height:100%;
+    position: relative;
     border-radius: 1em;
     border: 10px solid var(--burgandy);
-
 }
 
-.headerPicture:before{
-    content: " ";
-    position:absolute;
-    z-index: 1;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 1em;
-    border: 5px solid var(--black);
-}
+    .headerPicture:before {
+        content: " ";
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 1em;
+        border: 5px solid var(--black);
+    }
 
+.headerWrapRight{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+}
 
 .headerName {
     width: 67%;
@@ -109,7 +120,8 @@ input[type="checkbox"].input-validation-error {
     min-width: 300px;
     display: flex;
 }
-.btn-header{
+
+.btn-header {
     margin: 1em;
     background-color: var(--white);
     color: var(--white);
